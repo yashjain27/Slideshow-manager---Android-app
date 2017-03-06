@@ -130,13 +130,9 @@ public class ActionCommand {
                 photo = slideshow.get(positionOne);
                 ImageView photo2 = slideshow.get(positionTwo);
                 if(positionOne > positionTwo){
-                    int temp = positionOne;
-                    positionOne = positionTwo;
-                    positionTwo = temp;
-                }
-                //slideshow.add(positionTwo, photo);
-                //slideshow.remove(positionOne);
-                Collections.rotate(slideshow.subList(positionOne, positionTwo+1), -1);
+                    Collections.rotate(slideshow.subList(positionTwo, positionOne+1), +1);
+                }else
+                    Collections.rotate(slideshow.subList(positionOne, positionTwo+1), -1);
                 break;
 
             case REMOVE:
